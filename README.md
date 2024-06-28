@@ -28,7 +28,7 @@ Here are some resources to help you get started with our projects:
 
 ## 🎉 Fun Facts 🎉
 - **🍽️ Breakfast Culture**: At Techjork, we love to kickstart our day with a hearty breakfast. Our team's favorites range from classic pancakes to exotic smoothies.
-- **🦉 Office Mascot**: We have a friendly office mascot, a stuffed robot named Techjork, who watches over our coding marathons and brainstorming sessions.
+- **🤖 Office Mascot**: We have a friendly office mascot, a stuffed robot named Techjork, who watches over our coding marathons and brainstorming sessions.
 
 ## 🌐 Let's Connect 🌐
 We are excited to collaborate with you and achieve mighty things together! If you have any questions or just want to say hi, feel free to reach out.
