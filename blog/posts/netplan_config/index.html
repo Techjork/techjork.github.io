@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuring Network Interface with Netplan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code, pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        pre {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Configuring Network Interface with Netplan</h1>
+
+    <h2>Introduction</h2>
+    <p>In this tutorial, you will learn how to configure a network interface using Netplan on Ubuntu Linux. Netplan is a utility for easily configuring networking on Linux systems. We will configure a static IP address, DNS servers, and gateway for an Ethernet interface (<code>enp7s0</code>) using a Netplan configuration file.</p>
+
+    <h2>Prerequisites</h2>
+    <ul>
+        <li>Ubuntu Linux installed with Netplan (typically included by default).</li>
+        <li>Basic understanding of networking concepts like IP addresses, subnet masks, DNS, and gateways.</li>
+    </ul>
+
+    <h2>Steps</h2>
+
+    <h3>Step 1: Create a Netplan Configuration File</h3>
+    <p>Create or edit a Netplan configuration file. For example, create a file named <code>01-netcfg.yaml</code> in the <code>/etc/netplan/</code> directory (you can choose any filename as long as it ends with <code>.yaml</code>):</p>
+    <pre><code>sudo nano /etc/netplan/01-netcfg.yaml</code></pre>
+
+    <h3>Step 2: Configure the Network Interface</h3>
+    <p>Add the following configuration to the <code>01-netcfg.yaml</code> file:</p>
+    <pre><code>network:
+  version: 2
+  renderer: NetworkManager  # Specifies NetworkManager as the renderer
+
+  ethernets:
+    enp7s0:
+      optional: true  # Interface enp7s0 is optional
+
+      addresses:
+        - "10.0.0.201/24"  # Static IP address and subnet mask
+
+      nameservers:
+        addresses:
+          - 1.1.1.1  # Primary DNS server
+          - 8.8.8.8  # Secondary DNS server
+
+      gateway4: 10.0.0.1  # IPv4 gateway address
+
+      dhcp4: true  # Use DHCP for IPv4 configuration
+      dhcp6: false  # Disable DHCP for IPv6</code></pre>
+
+    <h3>Step 3: Apply the Configuration</h3>
+    <p>Save the file (<code>Ctrl+O</code>, <code>Enter</code> to save in nano) and apply the configuration using the following command:</p>
+    <pre><code>sudo netplan apply</code></pre>
+
+    <h3>Explanation</h3>
+    <ul>
+        <li><strong><code>network:</code></strong> Starts the network configuration block.</li>
+        <li><strong><code>version: 2</code></strong> Specifies the Netplan configuration format version.</li>
+        <li><strong><code>renderer: NetworkManager</code></strong> Uses NetworkManager to manage network configurations.</li>
+        <li><strong><code>ethernets:</code></strong> Configures Ethernet interfaces.</li>
+        <li><strong><code>enp7s0:</code></strong> Specifies the name of the Ethernet interface (<code>enp7s0</code>) to configure.</li>
+        <li><strong><code>optional: true</code></strong> Indicates that the interface is optional.</li>
+        <li><strong><code>addresses:</code></strong> Sets the static IP address (<code>10.0.0.201</code>) with subnet mask (<code>/24</code>).</li>
+        <li><strong><code>nameservers:</code></strong> Configures DNS server addresses (<code>1.1.1.1</code>, <code>8.8.8.8</code>).</li>
+        <li><strong><code>gateway4: 10.0.0.1</code></strong> Specifies the IPv4 gateway address.</li>
+        <li><strong><code>dhcp4: true</code></strong> Enables DHCP for IPv4 configuration.</li>
+        <li><strong><code>dhcp6: false</code></strong> Disables DHCP for IPv6 configuration.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>You have successfully configured a static IP address, DNS servers, and gateway for the <code>enp7s0</code> Ethernet interface using Netplan on Ubuntu Linux. This setup ensures consistent networking settings for your system.</p>
+</div>
+
+</body>
+</html>
