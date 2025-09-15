@@ -5,7 +5,7 @@ _Where Security Meets Innovation_
 
 ## 🌟 About Us 🌟
 
-**[Techjork IT Solutions Limited](https://techjork.com)**, fondly known as Techjork, is dedicated to providing top-notch IT solutions tailored to meet the unique needs of its clients. Founded by the talented web developer **devtz007**, the company excels in delivering high quality web development, software solutions, cybersecurity, IT consultancy, and help desk services.
+**🙋‍♀️[Techjork IT Solutions Limited](https://www.techjork.com)**, fondly known as Techjork, is dedicated to providing top-notch IT solutions tailored to meet the unique needs of its clients. Founded by the talented web developer **devtz007**, the company excels in delivering high quality web development, software solutions, cybersecurity, IT consultancy, and help desk services.
 
 ### 🚀 Our Services 🚀
 
